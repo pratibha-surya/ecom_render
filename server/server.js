@@ -22,8 +22,11 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors())
-
+const corsOptions = {
+  origin: 'https://ecom-render-tk1v.onrender.com', // Your frontend URL
+  credentials: true, // Allow credentials
+};
+app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 app.use("/api/v1/auth", authRouter);
