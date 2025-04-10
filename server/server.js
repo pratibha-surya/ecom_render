@@ -23,7 +23,18 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(
-  cors()
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "Cache-Control",
+      "Expires",
+      "Pragma",
+    ],
+    credentials: true,
+  })
 );
 
 app.use(cookieParser());
@@ -41,7 +52,6 @@ app.use("/api/shop/search", shopSearchRouter);
 app.use("/api/shop/review", shopReviewRouter);
 
 app.use("/api/common/feature", commonFeatureRouter);
-
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
