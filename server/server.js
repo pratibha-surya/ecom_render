@@ -15,7 +15,7 @@ const shopSearchRouter = require("./routes/shop/search-routes");
 const shopReviewRouter = require("./routes/shop/review-routes");
 
 const commonFeatureRouter = require("./routes/common/feature-routes");
-const { default: connectDB } = require("./config/db.js");
+const {  connectDB } = require("./config/db.js");
 dotenv.config();
 connectDB();
 
@@ -54,3 +54,15 @@ app.use("/api/shop/review", shopReviewRouter);
 app.use("/api/common/feature", commonFeatureRouter);
 app.use(errorMiddleware);
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
+
+
+
+
+
+
+///dharma
+MONGO_URL = mongodb+srv://pratibhasuryavanshi117:pratibhasuryavanshi117@cluster0.r57qql1.mongodb.net/ecom
+JWT_SECRET = d22h3a3r4m4a34r2c34k2342p2r3a4b4h55a6o67k
+
+CLIENT_ID = AVPY69RshIFWOqgjmqi7jtThz_vahPy6ki5_OPIh-w423aKzwyYCpV0xMDQr3elHugjdteGttGJelLci
+CLIENT_SECRET_KEY = EHKMAbJQloAvMA9hvt3vFqZ-Avz-XZU2CUhQHQbRMVsEZUM-JcqKh7ckbp5knJ0FOAaJ-UpUidiUOts9
